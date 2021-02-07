@@ -21,9 +21,7 @@ def insert(root, data):
     
     return root
 def delete(root, key):
-
-    if root.data == key:
-        if root.leftNode is None and root.rightNode is None:
+    pass
 
 def inorder(root):
     if root:
@@ -32,16 +30,22 @@ def inorder(root):
         print(root.data)
         inorder(root.rightNode)
 def inorder_without_recursion(root):
-
-    if root: 
-        
+    pass
+def RangeSumBst(root,low, high):
+    #print(sum)
+    if root is None:
+        return 0
+    value = root.data if low<= root.data <= high else 0
+    return value + RangeSumBst(root.leftNode, low, high) +RangeSumBst(root.rightNode, low, high)
 if __name__ == '__main__':
 
     root = None
-    root =  insert(root, 1)
-    print(root.leftNode)
+    root =  insert(root, 10)
+    #print(root.leftNode)
     root  = insert(root, 5)
-    root  = insert(root, 10)
-    root  = insert(root, 2)
-    inorder(root)
+    root  = insert(root, 15)
+    root  = insert(root, 3)
+    root  = insert(root, 7)
+    root  = insert(root,18)
+    print(RangeSumBst(root, 7,15))
     
