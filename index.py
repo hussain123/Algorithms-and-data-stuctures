@@ -6,17 +6,27 @@ def get_my_age():
 def empty_function():
     pass
 
-print('123',' ')
+
+arr = [[0 for i in range(2)]  
+            for i in range(5)] 
+arr[0][0], arr[0][1] = 11, 20
+arr[1][0], arr[1][1] = 30, 40
+arr[2][0], arr[2][1] = 5, 10
+arr[3][0], arr[3][1] = 40, 30
+arr[4][0], arr[4][1] = 10, 5
+
+print(arr)
+print(min(1 + 5, 10 - 5) )
 
 year = 2100 
-for i in range(0,10):
-    print('1', sep='')
 
-
-
-print('Welcome'.center(10, '-'))
-
-
+s = {}
+for row in arr:
+    sum = row[0] + row[1]
+    if sum in s: 
+        print("(",s[sum],")")
+    else:
+        s[sum] = row
 
 def is_leap(year):
     leap = True
